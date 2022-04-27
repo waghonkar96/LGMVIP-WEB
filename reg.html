@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student registraion form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div  class="frm">
+        <h1 style="color: hwb(0 0% 100%); font: bold;"> <br>Student Information</h1><br><br>
+    <form method="post" name="sample"  class="inp">
+        Application Date: <input type="date" name="date"> <br> <br>
+        Student Name: <input type="text" name="name"> <br><br>
+     Roll_no:<input type="text" name="rollNo"><br> <br>
+         Branch: <input type="text" name="branch"> <br> <br>
+        Year:<input type="text" name="year"> <br> <br>
+        Email: <input type="text" name="email"> <br> <br>
+       
+        Gender: <input type="radio" name="gender" value="male"> Male 
+                 <input type="radio" name="gender" value="Female"> Female 
+               <br>
+        <br> 
+        <input type="button" name="add" value=" Submit"  class="btn" onclick="addStudent();"><br><br>
+        <input type="reset" name="reset" value="Reset" class="btn1">
+    </form>
+    </div>
+
+    <div  class="table">
+
+        <table id="tbl" border="2" class="tab">
+
+            <h1 style="color: rgb(3, 3, 3); font: bold; padding-top: 20px;"> <br> Student Details</h1>
+            <thead > <br> 
+                <th> &ensp; Application Date &nbsp; &nbsp; &nbsp; <pre></pre></th>
+                <th> &ensp; Name &nbsp; &nbsp; &nbsp;<pre></pre></th>
+                <th> &ensp;Roll No &nbsp; &nbsp; &nbsp;<pre></pre></th>
+                <th> &ensp; Branch &nbsp; &nbsp; &nbsp;<pre></pre></th>
+                <th> &ensp; Year &nbsp;&nbsp;&nbsp;<pre></pre></th>
+                <th> &ensp; Email &nbsp; &nbsp;&nbsp;<pre></pre></th>
+                <th>&ensp; Gender &nbsp;&nbsp;&nbsp;<pre></pre></th>
+            
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <script type="text/javascript">
+        
+        
+        function addStudent()
+        {
+            var date= document.sample.date.value;
+            var name= document.sample.name.value;
+            var rollNo= document.sample.rollNo.value;
+            var branch = document.sample.branch.value;
+            var year= document.sample.year.value;
+            var email= document.sample.email.value;
+            var gender= document.sample.gender.value;
+            
+           
+            var tr= document.createElement('tr');
+            
+
+            var td1 = tr.appendChild(document.createElement('td'));
+            var td2 = tr.appendChild(document.createElement('td'));
+            var td3 = tr.appendChild(document.createElement('td'));
+            var td4 = tr.appendChild(document.createElement('td'));
+            var td5 = tr.appendChild(document.createElement('td'));
+            var td6 = tr.appendChild(document.createElement('td'));
+            var td7 = tr.appendChild(document.createElement('td'));
+           
+            
+            td1.innerHTML=date;
+            td2.innerHTML=name;
+            td3.innerHTML= rollNo;
+            td4.innerHTML=branch;
+            td5.innerHTML= year;
+            td6.innerHTML= email;
+            td7.innerHTML= gender;
+        
+            document.getElementById("tbl").appendChild(tr);  
+
+        }
+    </script>   
+</body>
+</html>
